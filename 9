@@ -1,0 +1,27 @@
+file = open('9.csv')
+lines = file.readlines()
+file.close()
+
+ms = 0
+mi = -1
+
+for i in range(len(lines)):
+    n = list(map(int, lines[i].split(';')))
+    if len(set(n)) != 4:
+        continue
+    es = 0
+    os = 0
+    
+    for num in n:
+        if num % 2 == 0:
+            es += num
+        else:
+            os += num ** 3
+    
+    if es ** 2 > os:
+        ls = sum(n)
+        if i > mi:
+            mi = i
+            ms = ls
+
+print(ms)
