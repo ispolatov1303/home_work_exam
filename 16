@@ -1,0 +1,9 @@
+F = []
+for n in range(110):
+    F[n] = n
+
+for n in range(110, 74915):
+    F[n] = (n - 7) * F[n - 8]
+
+answer = (F[74914] - F[74898]) / (16 * F[74890])
+print(int(answer))
