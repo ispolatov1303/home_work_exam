@@ -1,0 +1,24 @@
+file = open('17.txt')
+a = list(map(int, file.readlines()))
+file.close()
+m = max(a)
+c = 0
+M = 0
+for i in range(len(a)-2):
+    x, y, z = a[i], a[i+1], a[i+2]
+    n = 0
+    p = 0
+    for num in [x, y, z]:
+        if num < 0:
+            n += num
+        elif num > 0:
+            p += num
+    
+    if abs(neg_sum) <= pos_sum:
+        pr = x * y * z
+        if abs(pr) % 10 == ml % 10:
+            c += 1
+            if abs(pr) > M:
+                M = abs(pr)
+print(c)
+print(M)
